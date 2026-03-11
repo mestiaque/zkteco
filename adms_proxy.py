@@ -28,7 +28,7 @@ def signal_handler(sig, frame):
 signal.signal(signal.SIGINT, signal_handler)
 
 print("--------------------------------------------------")
-print("G4 Pro ADMS Proxy Fix - 2026 LIVE")
+print("ADMS Proxy Fix")
 print(f"Forwarding to: {LARAVEL_URL}")
 print("--------------------------------------------------")
 
@@ -44,7 +44,7 @@ while True:
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         print(f"[{timestamp}] Incoming: {addr}")
-        # print(f"  --> [Raw Data Received]:\n{raw_str}")
+        print(f"  --> [Raw Data Received]:\n{raw_str}")
         # ১. এটেনডেন্স ডাটা হ্যান্ডলিং
         if "table=rtlog" in raw_str.lower() or "table=attlog" in raw_str.lower():
             print(f"  --> [FIND] Attendance Data! Processing...")
