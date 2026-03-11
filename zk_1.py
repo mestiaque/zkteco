@@ -61,13 +61,13 @@ print("--------------------------------------------------")
 while True:
     try:
         client, addr = server.accept()
+        data = client.recv(131072)
 
         # ------------------ RAW DATA DEBUG ------------------
         print(f"[RAW DATA]: {data}")       # original bytes
         print(f"[RAW HEX] : {data.hex()}") # hex format
         # ----------------------------------------------------
 
-        data = client.recv(131072)
         if not data:
             client.close()
             continue
